@@ -1,0 +1,157 @@
+1.1.01
+------
+* Removed log button.
+* using native 1.1.05, configured small size, but re-added the avdevice, and the libpostproc.
+* vk.log is deleted before a new transcoding started.
+
+1.1.00
+------
+* Added loader jni interface.
+
+1.2.00
+------
+* Native upgraded to 1.1.06e_small_rc2
+* Simple Error detection added. 
+* Native crashed in any case of command fail - fixed, most commands work.
+  Known issue: in case of input file(s) not exits, native will crash.
+* Keyboard hidden + screen rotation handled.
+* Added partial (CPU) WakeLock support.
+
+
+1.3.00
+------
+* Added ProgressBarExample with full progress bar support.
+
+
+1.5.00
+------
+* Bug in the lastLogSize init caused second run to not show valid progress.
+* Upgraded to native engine: 1.1.07_small_rc27
+* Support for native stop.
+* Engine 1.1.07_small_rc27 is now more robust, less crashes when the command is not valid.
+* Loader improved to support fexit.
+  Loader is always calling dlopen(libPath, RTLD_LAZY)
+  Originally we reused the handle, but it caused problems.
+
+1.5.01
+------
+* engine Updated to 1.1.09
+* New loader run interface.
+* New LM
+
+1.5.02
+------
+* Better support for media file duration calculation.
+
+1.6.00
+------
+* Native upgraded to 1.1.10 (performance and stability improvements).
+
+1.6.02
+------
+* bug fixed: File handler not closed in some cases.
+* Added license copy mechanism.
+* Failed to read video duration bug fixed.
+* Native log (vk.log) moved to the application internal folder.
+* Synchronization bug fix related to vk.log change counter (_vkLogNoChangeCounter).
+
+1.6.03
+------
+* Native upgraded to 1.1.10 fixed sync issue bug.
+
+2.0.00
+------
+* Lollipop support.
+* Added fast native (1.1.10).
+* Small UI changes.
+* Change in package structure for easier integration. 
+
+2.1.00
+------
+* Simplification and restructure.
+
+2.3.00
+------
+* Added ProgressBarWithNotificationExample.
+* More UI improvements, and various bug, and warnings fixes.
+
+2.3.01
+------
+* Removed notification compatibility (and compatibility jar).
+* More simplification (small changes).
+
+2.3.02
+------
+* Added some help text to the UI.
+
+2.5.15
+------
+* Upgraded to ffmpeg 2.5 base.
+* Support for zoompan filter.
+* Stop support.
+* LM upgrade.
+* Added zoompan example (to commands.txt)
+* Added command validation mechanism.
+
+2.5.16
+------
+* Added essentials build (libvideokit.so.ess) a size of 5M.
+  This build contains a subset of FFmpeg4Android that contains features (filters, coders, encoders, muxers etc),
+  That are the most commonly used.
+  This build is great for apps that need to keep small size.
+  All the performance benefits of the full ffmpeg4android are kept.
+  To use this build, simply rename libvideokit.so to libvideokit.so.full, 
+  and rename libvideokit.so.ess to libvideokit.so
+
+* command log print.
+* Validation improvements (output folder existence).
+
+2.5.17
+------
+* Some bug fixes related to gradle (Android Studio).
+
+2.5.18
+------
+* Run command signature changed (added logPath, as mandatory param, and isValidate as optional param).
+
+// running without command validation
+vk.run(complexCommand, workFolder, getApplicationContext(),vkLogPath, false);
+
+// running with command validation
+vk.run(GeneralUtils.utilConvertToComplex(commandStr), workFolder, getApplicationContext(), vkLogPath);
+
+* command validation bug fix & improvements (streaming, picture array).
+* Ability to disable command validation (the last parameter):
+vk.run(complexCommand, workFolder, getApplicationContext(), logPath, false);
+* Added print of lib version.
+* Copy of vk.log in case of a crash.
+* Delete of previous log moved to lib from the demo.
+
+2.5.19
+------
+* Run command signature changed back to original.
+
+25.23.19
+--------
+* Improved x264 encoding performance, around 30%
+* native x86 support.
+
+25.23.20 (not published)
+--------
+* Small fix, removed videokit package.
+* Command validation support for no valid paths.
+* Improved print command.
+
+25.23.23 (not published)
+--------
+* ARM 64 bit support (arm64_v8a)
+* Added fixComplexCommand utility.
+
+25.23.24 (not published but used by vk2)
+--------
+* Support multiply vids for duration calc
+
+
+
+   
+

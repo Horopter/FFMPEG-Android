@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ffmpeg-video-android</string>
+    <string name="menu_settings">Settings</string>
+    <string name="record">Record</string>
+</resources>
